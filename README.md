@@ -28,32 +28,42 @@ Cette allocation permet de prendre en compte plusieurs catégories de risque :
 - **Risque sur matières premières**: Or et Pétrole ;
 - **Risque de change**: EUR/USD.
 
-À partir des données historiques de prix, on calcule dans un premier temps le **rendement de chaque actif** du portefeuille. Pour un actif (i), le rendement entre les dates (t-1) et (t) est défini par :
+## 2. Calcul des rendements et de la valeur du portefeuille
 
-[
-r_{i,t}=\frac{P_{i,t}}{P_{i,t-1}}-1
-]
+À partir des données historiques de prix, nous calculons dans un premier temps le **rendement de chaque actif** du portefeuille.
 
-où (P_{i,t}) représente le prix de l’actif (i) à la date (t) et (P_{i,t-1}) son prix à la date précédente.
+Pour un actif $i$, le rendement entre les dates $t-1$ et $t$ est défini par :
 
-Une fois les rendements calculés pour l’ensemble des actifs, le rendement du portefeuille à la date (t) est obtenu en tenant compte du poids (w_i) de chaque actif :
+$$
+r_{i,t} = \frac{P_{i,t}}{P_{i,t-1}} - 1
+$$
 
-[
-r_{p,t}=\sum_{i=1}^{N}w_i r_{i,t}
-]
+où :
 
-où (N) représente le nombre d’actifs composant le portefeuille.
+- $P_{i,t}$ représente le prix de l'actif $i$ à la date $t$ ;
+- $P_{i,t-1}$ représente le prix de l'actif $i$ à la date précédente ;
+- $r_{i,t}$ représente le rendement de l'actif $i$ à la date $t$.
 
-La valeur du portefeuille évolue ensuite en fonction de son rendement. Si (V_{t-1}) représente la valeur du portefeuille à la période précédente, sa valeur à la date (t) est donnée par :
+Une fois les rendements calculés pour l'ensemble des actifs, le **rendement du portefeuille** à la date $t$ est obtenu en tenant compte du poids $w_i$ de chaque actif :
 
-[
-\boxed{V_t=V_{t-1}(1+r_{p,t})}
-]
+$$
+r_{p,t} = \sum_{i=1}^{N} w_i r_{i,t}
+$$
 
-De manière équivalente, si les quantités (q_i) détenues sont fixes et que l'on dispose directement des prix de chaque actif, la valeur du portefeuille à la date (t) peut être calculée par :
+où $N$ représente le nombre d'actifs composant le portefeuille et $w_i$ le poids de l'actif $i$.
 
-[
-\boxed{V_t=\sum_{i=1}^{N}q_iP_{i,t}}
-]
+La **valeur du portefeuille à la date $t$** peut ensuite être déterminée à partir de sa valeur à la période précédente :
 
-Ces calculs permettent d’obtenir l’évolution historique du portefeuille et constituent la base pour construire la distribution des gains et pertes utilisée dans le calcul de la **VaR** et de l’**Expected Shortfall**.
+$$
+V_t = V_{t-1}(1+r_{p,t})
+$$
+
+où $V_{t-1}$ représente la valeur du portefeuille à la période précédente et $r_{p,t}$ son rendement entre $t-1$ et $t$.
+
+Si les quantités $q_i$ détenues de chaque actif sont connues, la valeur du portefeuille peut également être calculée directement à partir des prix :
+
+$$
+V_t = \sum_{i=1}^{N} q_i P_{i,t}
+$$
+
+Ces calculs permettent de suivre l'évolution historique de la valeur du portefeuille et serviront ensuite à construire la distribution des gains et pertes utilisée pour le calcul de la **Value at Risk (VaR)** et de l'**Expected Shortfall (ES)**.
