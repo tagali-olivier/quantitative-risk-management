@@ -42,12 +42,12 @@ où :
 
 - $P_{i,t}$ représente le prix de l'actif $i$ à la date $t$ ;
 - $P_{i,t-1}$ représente le prix de l'actif $i$ à la date précédente ;
-- $r_{i,t}$ représente le rendement de l'actif $i$ à la date $t$.
+- $r_{i,t}$ représente le rendement de l'actif $i$ entre les dates $t-1$ et $t$.
 
 Pour chaque actif $i$, le P&L à la date $t$ est calculé à partir de la valeur de la position et du rendement observé :
 
 $$
-P\&L_{i,t} = V_{i,t-1} r_{i,t}
+P\&L_{i,t} = V_{i,t-1} \, r_{i,t}
 $$
 
 où $V_{i,t-1}$ représente la valeur de la position dans l'actif $i$ à la date $t-1$, et $r_{i,t}$ son rendement entre les dates $t-1$ et $t$.
@@ -61,8 +61,5 @@ $$
 En remplaçant le P&L de chaque actif par son expression, on obtient :
 
 $$
-
-P\&L_{p,t} = \sum_{i=1}^{N} V_{i,t-1} r_{i,t}
+P\&L_{p,t} = \sum_{i=1}^{N} V_{i,t-1} \, r_{i,t}
 $$
-
-
