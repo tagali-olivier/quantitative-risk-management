@@ -48,7 +48,7 @@ Une fois les rendements calculés pour l'ensemble des actifs, le **rendement du 
 
 ### Calcul du P&L du portefeuille
 
-Pour chaque actif $i$, le P&L à la date $t$ est calculé par :
+Pour chaque actif $i$, le P&L à la date $t$ est calculé à partir de la valeur de la position et du rendement observé :
 
 $$
 P\&L_{i,t} = V_{i,t-1} r_{i,t}
@@ -64,7 +64,7 @@ P\&L_{p,t} = \sum_{i=1}^{N} P\&L_{i,t}
 }
 $$
 
-Ainsi, le P&L du portefeuille peut également s'écrire :
+En remplaçant le P&L de chaque actif par son expression, on obtient :
 
 $$
 \boxed{
@@ -72,4 +72,4 @@ P\&L_{p,t} = \sum_{i=1}^{N} V_{i,t-1} r_{i,t}
 }
 $$
 
-où $N$ représente le nombre total d'actifs composant le portefeuille.
+Cette approche permet non seulement de déterminer le gain ou la perte totale du portefeuille, mais également d'identifier la contribution de chaque actif au P&L global.
