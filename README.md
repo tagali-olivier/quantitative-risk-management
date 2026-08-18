@@ -23,34 +23,8 @@ Le portefeuille est composé d'**actions américaines et européennes**, d'**obl
 
 Cette allocation permet de prendre en compte plusieurs catégories de risque :
 
-- **Risque actions** : S&P 500, EURO STOXX 50 et NASDAQ 100 ;
-- **Risque de taux d'intérêt** : US Treasury 10Y et Bund 10Y ;
-- **Risque sur matières premières** : Or et Pétrole ;
-- **Risque de change** : EUR/USD.
+- **Risque actions**: S&P 500, EURO STOXX 50 et NASDAQ 100 ;
+- **Risque de taux d'intérêt**: US Treasury 10Y et Bund 10Y ;
+- **Risque sur matières premières**: Or et Pétrole ;
+- **Risque de change**: EUR/USD.
 
-Les poids du portefeuille sont représentés par le vecteur :
-
-$$
-\mathbf{w}
-=
-\begin{pmatrix}
-0.25 \\
-0.15 \\
-0.10 \\
-0.15 \\
-0.10 \\
-0.10 \\
-0.10 \\
-0.05
-\end{pmatrix}
-$$
-
-avec la contrainte :
-
-$$
-\sum_{i=1}^{N} w_i = 1
-$$
-
-où $w_i$ représente le poids de l'actif $i$ dans le portefeuille.
-
-Ce portefeuille servira de référence pour les différentes analyses de risque du projet, notamment la **Value at Risk (VaR)**, l'**Expected Shortfall (ES)**, les **simulations Monte Carlo**, le **backtesting** et les **stress tests**.
