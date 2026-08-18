@@ -46,24 +46,30 @@ où :
 
 Une fois les rendements calculés pour l'ensemble des actifs, le **rendement du portefeuille** à la date $t$ est obtenu en tenant compte du poids $w_i$ de chaque actif :
 
-$$
-r_{p,t} = \sum_{i=1}^{N} w_i r_{i,t}
-$$
+### Calcul du P&L du portefeuille
 
-où $N$ représente le nombre d'actifs composant le portefeuille et $w_i$ le poids de l'actif $i$.
-
-La **valeur du portefeuille à la date $t$** peut ensuite être déterminée à partir de sa valeur à la période précédente :
+Pour chaque actif $i$, le P&L à la date $t$ est calculé par :
 
 $$
-V_t = V_{t-1}(1+r_{p,t})
+P\&L_{i,t} = V_{i,t-1} r_{i,t}
 $$
 
-où $V_{t-1}$ représente la valeur du portefeuille à la période précédente et $r_{p,t}$ son rendement entre $t-1$ et $t$.
+où $V_{i,t-1}$ représente la valeur de la position dans l'actif $i$ à la date $t-1$, et $r_{i,t}$ son rendement entre les dates $t-1$ et $t$.
 
-Si les quantités $q_i$ détenues de chaque actif sont connues, la valeur du portefeuille peut également être calculée directement à partir des prix :
+Le P&L total du portefeuille est ensuite obtenu en additionnant les P&L de l'ensemble des actifs :
 
 $$
-V_t = \sum_{i=1}^{N} q_i P_{i,t}
+\boxed{
+P\&L_{p,t} = \sum_{i=1}^{N} P\&L_{i,t}
+}
 $$
 
-Ces calculs permettent de suivre l'évolution historique de la valeur du portefeuille et serviront ensuite à construire la distribution des gains et pertes utilisée pour le calcul de la **Value at Risk (VaR)** et de l'**Expected Shortfall (ES)**.
+Ainsi, le P&L du portefeuille peut également s'écrire :
+
+$$
+\boxed{
+P\&L_{p,t} = \sum_{i=1}^{N} V_{i,t-1} r_{i,t}
+}
+$$
+
+où $N$ représente le nombre total d'actifs composant le portefeuille.
