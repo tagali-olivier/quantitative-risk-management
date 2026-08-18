@@ -44,22 +44,22 @@ où :
 - $P_{i,t-1}$ représente le prix de l'actif $i$ à la date précédente ;
 - $r_{i,t}$ représente le rendement de l'actif $i$ entre les dates $t-1$ et $t$.
 
-Pour chaque actif $i$, le P&L à la date $t$ est calculé à partir de la valeur de la position et du rendement observé :
+Pour chaque actif $i$, le P&L à la date $t$ est calculé par :
 
 $$
-P\&L_{i,t} = V_{i,t-1} \, r_{i,t}
+\mathrm{P\&L}_{i,t} = V_{i,t-1} \, r_{i,t}
 $$
 
 où $V_{i,t-1}$ représente la valeur de la position dans l'actif $i$ à la date $t-1$, et $r_{i,t}$ son rendement entre les dates $t-1$ et $t$.
 
-Le P&L total du portefeuille est ensuite obtenu en additionnant les P&L de l'ensemble des actifs :
+Le P&L total du portefeuille est obtenu en additionnant les P&L de l'ensemble des actifs :
 
 $$
-P\&L_{p,t} = \sum_{i=1}^{N} P\&L_{i,t}
+\mathrm{P\&L}_{p,t} = \sum_{i=1}^{N} \mathrm{P\&L}_{i,t}
 $$
 
 En remplaçant le P&L de chaque actif par son expression, on obtient :
 
 $$
-P\&L_{p,t} = \sum_{i=1}^{N} V_{i,t-1} \, r_{i,t}
+\mathrm{P\&L}_{p,t} = \sum_{i=1}^{N} V_{i,t-1} \, r_{i,t}
 $$
