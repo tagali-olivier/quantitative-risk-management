@@ -30,7 +30,7 @@ Cette allocation permet de prendre en compte plusieurs catégories de risque :
 
 ## 2. Calcul des rendements et de la valeur du portefeuille
 
-À partir des données historiques de prix, nous calculons dans un premier temps le **rendement de chaque actif** du portefeuille.
+A partir des données historiques de prix, nous calculons dans un premier temps le **rendement de chaque actif** du portefeuille.
 
 Pour un actif $i$, le rendement entre les dates $t-1$ et $t$ est défini par :
 
