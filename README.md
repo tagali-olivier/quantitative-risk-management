@@ -123,9 +123,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# ============================================================
-# 1. PARAMÈTRES DU PROJET
-# ============================================================
+
+#PARAMÈTRES DU PROJET
 
 PRICE_FILE = "data/prices.csv"
 
