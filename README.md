@@ -80,8 +80,6 @@ $$
 On détermine alors le quantile correspondant de la distribution historique des PnL :
 
 $$
-q_{1-\alpha}
-=
 Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
 $$
 
@@ -90,8 +88,7 @@ Comme ce quantile correspond généralement à une perte, il est négatif. La Va
 $$
 \mathrm{VaR}_{\alpha}
 =
--
-Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
+- Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
 $$
 
 Ainsi, la méthode historique consiste à utiliser directement la distribution observée des PnL du portefeuille pour déterminer le seuil de perte associé au niveau de confiance choisi, sans supposer de loi de probabilité particulière.
