@@ -157,7 +157,7 @@ market_values = weights * portfolio_value
 
 
 
-#CHARGEMENT DES DONNÉES
+#Chargement des données
 
 prices = pd.read_csv(
     PRICE_FILE,
@@ -171,9 +171,9 @@ print("Aperçu des données :")
 print(prices.head())
 
 
-# ============================================================
-# 4. CONTRÔLE DES ACTIFS
-# ============================================================
+
+# controler s'il y a des actifs manquants
+
 
 required_assets = weights.index.tolist()
 
@@ -189,9 +189,8 @@ if missing_assets:
     )
 
 
-# ============================================================
-# 5. FILTRAGE À LA DATE DE VALORISATION
-# ============================================================
+
+# Filtrage à la date de valorisation
 
 valuation_date = pd.Timestamp(VALUATION_DATE)
 
@@ -206,10 +205,8 @@ if prices.empty:
     )
 
 
-# ============================================================
-# 6. CALCUL DES RENDEMENTS HISTORIQUES
-# ============================================================
 
+#Calcul de rendements historiques
 returns = prices.pct_change().dropna()
 
 # On ne conserve que la fenêtre historique choisie
@@ -220,17 +217,16 @@ print("\nNombre de scénarios historiques :")
 print(len(returns))
 
 
-# ============================================================
-# 7. EXAMEN DES RENDEMENTS
-# ============================================================
+
+# Examen des rendements
 
 print("\nStatistiques des rendements :")
 print(returns.describe())
 
 
-# ============================================================
-# 8. CALCUL DES P&L PAR ACTIF
-# ============================================================
+
+#Calcul de P&L par actif
+
 
 # P&L actif par actif :
 # P&L_i,t = exposition_i * rendement_i,t
@@ -244,9 +240,8 @@ print("\nExemple de P&L par actif :")
 print(asset_pnl.head())
 
 
-# ============================================================
-# 9. CALCUL DU P&L DU PORTEFEUILLE
-# ============================================================
+
+# 9. Calcul de P&L du portefeuille
 
 portfolio_pnl = asset_pnl.sum(axis=1)
 
@@ -254,9 +249,8 @@ print("\nExemple de P&L portefeuille :")
 print(portfolio_pnl.head())
 
 
-# ============================================================
-# 10. FONCTION HISTORICAL VAR
-# ============================================================
+
+# Fonction de l'historical VAR
 
 def historical_var(
     pnl: pd.Series,
@@ -272,9 +266,8 @@ def historical_var(
     return var
 
 
-# ============================================================
-# 11. FONCTION EXPECTED SHORTFALL
-# ============================================================
+
+# Fonction Expected Shortfall
 
 def historical_es(
     pnl: pd.Series,
@@ -283,10 +276,10 @@ def historical_es(
 
     alpha = 1 - confidence_level
 
-    threshold = pnl.quantile(alpha)
+    a = pnl.quantile(alpha)
 
     tail_losses = pnl[
-        pnl <= threshold
+        pnl <= a
     ]
 
     es = -tail_losses.mean()
@@ -294,23 +287,16 @@ def historical_es(
     return es
 
 
-# ============================================================
-# 12. CALCUL VAR + ES
-# ============================================================
+
+# CALCUL VAR + ES
 
 results = []
 
 for confidence in CONFIDENCE_LEVELS:
 
-    var_value = historical_var(
-        portfolio_pnl,
-        confidence
-    )
+    var_value = historical_var(portfolio_pnl, confidence)
 
-    es_value = historical_es(
-        portfolio_pnl,
-        confidence
-    )
+    es_value = historical_es( portfolio_pnl, confidence)
 
     results.append({
         "Confidence Level": confidence,
@@ -327,9 +313,9 @@ print("\nRÉSULTATS HISTORICAL VAR & ES")
 print(risk_results)
 
 
-# ============================================================
-# 13. AFFICHAGE FORMATÉ
-# ============================================================
+
+# AFFICHAGE FORMATÉ
+
 
 print("\n=======================================")
 print("   HISTORICAL RISK REPORT")
@@ -349,15 +335,9 @@ print(
 
 for confidence in CONFIDENCE_LEVELS:
 
-    var_value = historical_var(
-        portfolio_pnl,
-        confidence
-    )
+    var_value = historical_var( portfolio_pnl, confidence)
 
-    es_value = historical_es(
-        portfolio_pnl,
-        confidence
-    )
+    es_value = historical_es(portfolio_pnl, confidence)
 
     print(
         f"\nVaR {confidence:.0%}  : "
@@ -380,9 +360,9 @@ for confidence in CONFIDENCE_LEVELS:
     )
 
 
-# ============================================================
-# 14. PIRE SCÉNARIO HISTORIQUE
-# ============================================================
+
+# Pire scenario historique
+
 
 worst_date = portfolio_pnl.idxmin()
 
@@ -403,9 +383,8 @@ print(
 )
 
 
-# ============================================================
-# 15. CONTRIBUTIONS AU PIRE SCÉNARIO
-# ============================================================
+
+# Contribution au pire scenario
 
 worst_contributions = (
     asset_pnl
@@ -417,9 +396,9 @@ print("\nContributions par actif :")
 print(worst_contributions)
 
 
-# ============================================================
-# 16. TOP 10 DES PIRES SCÉNARIOS
-# ============================================================
+
+# Top 10 DES PIRES SCÉNARIOS
+
 
 worst_10 = (
     portfolio_pnl
