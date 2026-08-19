@@ -124,7 +124,7 @@ import matplotlib.pyplot as plt
 
 
 
-#PARAMÈTRES DU PROJET
+#Paramètres
 
 PRICE_FILE = "data/prices.csv"
 
@@ -135,11 +135,9 @@ LOOKBACK_DAYS = 500
 CONFIDENCE_LEVELS = [0.95, 0.99]
 
 
-# ============================================================
-# 2. DÉFINITION DU PORTEFEUILLE
-# ============================================================
+#Definition du portefeuille
 
-# Exemple de poids
+
 weights = pd.Series({
     "SP500": 0.25,
     "EUROSTOXX50": 0.15,
