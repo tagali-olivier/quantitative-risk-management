@@ -149,16 +149,15 @@ weights = pd.Series({
     "EURUSD": 0.05
 })
 
-# Valeur totale du portefeuille à la date de valorisation
+#Valeur totale du portefeuille à la date de valorisation
 portfolio_value = 1_000_000
 
 # Expositions actuelles
 market_values = weights * portfolio_value
 
 
-# ============================================================
-# 3. CHARGEMENT DES DONNÉES
-# ============================================================
+
+#CHARGEMENT DES DONNÉES
 
 prices = pd.read_csv(
     PRICE_FILE,
