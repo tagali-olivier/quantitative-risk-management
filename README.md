@@ -73,9 +73,9 @@ Pour un niveau de confiance $\alpha$, la Value at Risk est déterminée à parti
 
 Le niveau de quantile associé à la VaR est :
 
-$$
+$
 1 - \alpha
-$$
+$
 
 On détermine alors le quantile correspondant de la distribution historique des PnL :
 
@@ -83,12 +83,4 @@ $$
 Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
 $$
 
-Comme ce quantile correspond généralement à une perte, il est négatif. La Value at Risk est donc exprimée comme une perte positive :
 
-$$
-\mathrm{VaR}_{\alpha}
-=
-- Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
-$$
-
-Ainsi, la méthode historique consiste à utiliser directement la distribution observée des PnL du portefeuille pour déterminer le seuil de perte associé au niveau de confiance choisi, sans supposer de loi de probabilité particulière.
