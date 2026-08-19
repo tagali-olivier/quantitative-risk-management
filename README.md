@@ -82,3 +82,47 @@ $$
 Et la value at Risk est donc:
 
 $$ \mathrm{VaR}_{\alpha}=- Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)$$
+
+
+## 6. Expected Shortfall (ES)
+
+L'**Expected Shortfall (ES)** est une mesure de risque qui complète la **Value at Risk (VaR)**.
+
+La VaR indique un **seuil de perte** associé à un niveau de confiance donné. Elle permet d'identifier le niveau de perte à partir duquel se situent les scénarios les plus défavorables.
+
+Elle répond donc à la question :
+
+> **À partir de quel niveau considère-t-on qu'une perte devient extrême ?**
+
+Cependant, la VaR ne donne aucune information sur la gravité des pertes situées **au-delà de ce seuil**. Deux portefeuilles peuvent ainsi présenter une même VaR tout en ayant des pertes extrêmes très différentes.
+
+L'**Expected Shortfall** cherche précisément à mesurer cette gravité. Il correspond à la **perte moyenne dans les scénarios où la VaR est dépassée**. Autrement dit, on sélectionne les observations appartenant à la queue gauche de la distribution des PnL, puis on calcule leur moyenne.
+
+Si la VaR est exprimée comme une perte positive, le seuil correspondant dans la distribution des PnL est :
+
+$$
+-\mathrm{VaR}_{\alpha}
+$$
+
+Les scénarios extrêmes sont alors ceux qui vérifient :
+
+$$
+\mathrm{PnL}_{p} \leq -\mathrm{VaR}_{\alpha}
+$$
+
+L'Expected Shortfall est donc défini par :
+
+$$
+\mathrm{ES}_{\alpha}
+=
+-\mathbb{E}
+\left[
+\mathrm{PnL}_{p}
+\mid
+\mathrm{PnL}_{p} \leq -\mathrm{VaR}_{\alpha}
+\right]
+$$
+
+où $\alpha$ représente le niveau de confiance choisi.
+
+Ainsi, la **VaR** détermine le seuil à partir duquel les pertes sont considérées comme extrêmes, tandis que l'**Expected Shortfall** mesure la perte moyenne lorsque ce seuil est dépassé.
