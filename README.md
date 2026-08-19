@@ -529,8 +529,7 @@ rolling_var_99.plot(
 )
 
 ax.set_title(
-    "Rolling Historical VaR 99%"
-)
+    "Rolling Historical VaR 99%" )
 
 ax.set_ylabel(
     "VaR (€)"
