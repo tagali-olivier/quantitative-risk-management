@@ -76,7 +76,7 @@ Pour un niveau de confiance $\alpha$, la VaR historique est déterminée à part
 On détermine alors le quantile correspondant de la distribution historique des PnL :
 
 $$
-Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
+Q_{1-\alpha}\left(\mathrm{PnL}\right)
 $$
 
 
