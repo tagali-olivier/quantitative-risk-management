@@ -116,6 +116,7 @@ où $\alpha$ représente le niveau de confiance choisi.
 
 Ainsi, la **VaR** détermine le seuil à partir duquel les pertes sont considérées comme extrêmes, tandis que l'**Expected Shortfall** mesure la perte moyenne lorsque ce seuil est dépassé.
 
+```python
 
 import pandas as pd
 import numpy as np
@@ -570,3 +571,5 @@ ax.set_xlabel(
 )
 
 plt.show()
+
+```
