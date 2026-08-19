@@ -71,7 +71,7 @@ La série des PnL obtenue constitue la **distribution historique des gains et pe
 
 Pour un niveau de confiance $\alpha$, la Value at Risk est déterminée à partir de la partie gauche de cette distribution, qui correspond aux scénarios de pertes les plus importantes.
 
-Le niveau de quantile associé à la VaR est :$1 - \alpha$
+Pour un niveau de confiance $\alpha$, la VaR historique est déterminée à partir du quantile de niveau $1-\alpha$ de la distribution des PnL du portefeuille.
 
 On détermine alors le quantile correspondant de la distribution historique des PnL :
 
