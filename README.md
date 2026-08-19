@@ -79,4 +79,9 @@ $$
 Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
 $$
 
-
+Et la value at Risk est donc:
+$$
+\mathrm{VaR}_{\alpha}
+=
+- Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)
+$$
