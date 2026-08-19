@@ -397,7 +397,7 @@ print(worst_contributions)
 
 
 
-# Top 10 DES PIRES SCÉNARIOS
+# Top 10 des pires scenarios
 
 
 worst_10 = (
@@ -410,10 +410,8 @@ print("\n10 pires scénarios :")
 print(worst_10)
 
 
-# ============================================================
-# 17. VISUALISATION DISTRIBUTION P&L
-# ============================================================
 
+# Visualisation de la distribution du P&L
 var_99 = historical_var(
     portfolio_pnl,
     0.99
@@ -462,9 +460,8 @@ ax.legend()
 plt.show()
 
 
-# ============================================================
-# 18. VISUALISATION DES CONTRIBUTIONS
-# ============================================================
+
+# Visualisation des contributions
 
 fig, ax = plt.subplots(
     figsize=(10, 6)
@@ -492,9 +489,8 @@ plt.tight_layout()
 plt.show()
 
 
-# ============================================================
-# 19. ROLLING HISTORICAL VAR
-# ============================================================
+# ROLLING HISTORICAL VAR
+
 
 def rolling_historical_var(
     pnl: pd.Series,
@@ -521,9 +517,8 @@ rolling_var_99 = rolling_historical_var(
 )
 
 
-# ============================================================
+
 # 20. VISUALISATION ROLLING VAR
-# ============================================================
 
 fig, ax = plt.subplots(
     figsize=(12, 6)
