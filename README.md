@@ -65,7 +65,7 @@ $$
 $$
 
 
-### Calcul de la Value at Risk historique
+## 3. Calcul de la Value at Risk historique
 
 La série des PnL obtenue constitue la **distribution historique des gains et pertes du portefeuille**.
 
@@ -84,15 +84,13 @@ Et la value at Risk est donc:
 $$ \mathrm{VaR}_{\alpha}=- Q_{1-\alpha}\left(\mathrm{PnL}_{p}\right)$$
 
 
-## 6. Expected Shortfall (ES)
+## 4. Expected Shortfall (ES)
 
 L'**Expected Shortfall (ES)** est une mesure de risque qui complète la **Value at Risk (VaR)**.
 
 La VaR indique un **seuil de perte** associé à un niveau de confiance donné. Elle permet d'identifier le niveau de perte à partir duquel se situent les scénarios les plus défavorables.
 
-Elle répond donc à la question :
-
-> **À partir de quel niveau considère-t-on qu'une perte devient extrême ?**
+Elle répond donc à la question : **À partir de quel niveau considère-t-on qu'une perte devient extrême ?**
 
 Cependant, la VaR ne donne aucune information sur la gravité des pertes situées **au-delà de ce seuil**. Deux portefeuilles peuvent ainsi présenter une même VaR tout en ayant des pertes extrêmes très différentes.
 
@@ -112,16 +110,7 @@ $$
 
 L'Expected Shortfall est donc défini par :
 
-$$
-\mathrm{ES}_{\alpha}
-=
--\mathbb{E}
-\left[
-\mathrm{PnL}_{p}
-\mid
-\mathrm{PnL}_{p} \leq -\mathrm{VaR}_{\alpha}
-\right]
-$$
+$$ \mathrm{ES}_{\alpha}=-\mathbb{E} \left[\mathrm{PnL}_{p}\mid\mathrm{PnL}_{p} \leq -\mathrm{VaR}_{\alpha}\right]$$
 
 où $\alpha$ représente le niveau de confiance choisi.
 
