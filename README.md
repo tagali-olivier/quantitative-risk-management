@@ -157,9 +157,7 @@ où:
 
 Dans une approche paramétrique classique, on suppose que le rendement conditionnel suit une loi normale:
 
-$$
-r_{t+1} \sim \mathcal{N}\left(\mu_{t+1},\sigma_{t+1}^2\right)
-$$
+$$r_{t+1} \sim \mathcal{N}\left(\mu_{t+1},\sigma_{t+1}^2\right)$$
 
 avec:
 
@@ -169,22 +167,11 @@ avec:
 
 Pour un portefeuille de valeur $V_t$, la VaR au niveau de confiance $c$ peut être écrite :
 
-$$
-\boxed{
-VaR_{t+1}(c)
-=
-V_t
-\left(
--\mu_{t+1}
-+
-z_c\sigma_{t+1}
-\right)
-}
-$$
+$$\boxed{VaR_{t+1}(c)=V_t\left(-\mu_{t+1}+z_c\sigma_{t+1}\right)}$$
 
 où $z_c$ est le quantile associé au niveau de confiance choisi.
 
-Quelques quantiles usuels :
+Quelques quantiles usuels:
 
 | Niveau de confiance | Quantile $z_c$ |
 |---|---:|
@@ -195,25 +182,15 @@ Quelques quantiles usuels :
 
 Pour des rendements quotidiens, la moyenne est souvent très faible par rapport à la volatilité. On peut donc parfois utiliser l'approximation :
 
-$$
-\mu \approx 0
-$$
+$$\mu \approx 0$$
 
 ce qui donne :
 
-$$
-\boxed{
-VaR_{t+1}(c)
-\approx
-V_t z_c \sigma_{t+1}
-}
-$$
+$$\boxed{VaR_{t+1}(c)\approxV_t z_c \sigma_{t+1}}$$
 
 Le problème principal devient alors l'estimation de la volatilité future:
 
-$$
-\boxed{\sigma_{t+1}}
-$$
+$$\boxed{\sigma_{t+1}}$$
 
 C'est précisément le rôle des modèles **EWMA** et **GARCH**.
 
@@ -222,15 +199,7 @@ C'est précisément le rôle des modèles **EWMA** et **GARCH**.
 
 Une approche simple consiste à utiliser l'écart-type historique des rendements :
 
-$$
-\sigma
-=
-\sqrt{
-\frac{1}{N-1}
-\sum_{i=1}^{N}
-(r_i-\bar r)^2
-}
-$$
+$$\sigma=\sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(r_i-\bar r)^2}$$
 
 Cette méthode donne cependant la même importance à toutes les observations historiques.
 
@@ -247,13 +216,7 @@ Ce phénomène est appelé **volatility clustering**.
 
 En pratique :
 
-$$
-\boxed{
-\text{forte volatilité aujourd'hui}
-\Rightarrow
-\text{probabilité élevée de forte volatilité demain}
-}
-$$
+$$\boxed{\text{forte volatilité aujourd'hui}\Rightarrow\text{probabilité élevée de forte volatilité demain}}$$
 
 Les modèles EWMA et GARCH permettent de tenir compte de cette dépendance temporelle.
 
