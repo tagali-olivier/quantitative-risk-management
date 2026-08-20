@@ -409,15 +409,25 @@ La différence essentielle est que GARCH permet généralement d'**estimer les p
 
 Une fois le modèle estimé, nous obtenons la prévision de volatilité :
 
-$$\sigma_{t+1}$$
+$$
+\sigma_{t+1}
+$$
 
 Sous une distribution normale :
 
-$$\boxed{ VaR_{t+1}(c)=V_t\left[-\mu_{t+1}+z_c\sigma_{t+1}\right]}$$
+$$
+\mathrm{VaR}_{t+1}(c)
+=
+V_t \left[ -\mu_{t+1} + z_c \sigma_{t+1} \right]
+$$
 
-Pour un niveau de confiance de 99 % :
+Pour un niveau de confiance de **99 %** :
 
-$$\boxed{ VaR_{99\%,t+1}=V_t\left(-\mu_{t+1}+2.326\sigma_{t+1}\right)}$$
+$$
+\mathrm{VaR}_{99,t+1}
+=
+V_t \left( -\mu_{t+1} + 2.326 \sigma_{t+1} \right)
+$$
 
 # 2.3.5 GARCH avec distribution Student-t
 
