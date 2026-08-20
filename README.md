@@ -269,20 +269,27 @@ Une forte variation récente augmente donc automatiquement la volatilité prévu
 
 Sous l'hypothèse d'une distribution normale :
 
-$$\mathrm{VaR}_{t+1}(c)=V_t \left( -\mu + z_c \sigma_{t+1} \right)$$
+$$
+\mathrm{VaR}_{t+1}(c) = V_t \left( -\mu + z_c \sigma_{t+1} \right)
+$$
 
-Au niveau de confiance de 99 % :
+Au niveau de confiance de **99 %** :
 
-$$\mathrm{VaR}_{99\%,\,t+1}=V_t \left( -\mu + 2.326 \sigma_{t+1} \right)$$
+$$
+\mathrm{VaR}_{99,t+1} = V_t \left( -\mu + 2.326 \sigma_{t+1} \right)
+$$
 
 Si l'on suppose :
 
-$$\mu \approx 0$$
+$$
+\mu \approx 0
+$$
 
 alors :
 
-$$\mathrm{VaR}_{99\%,\,t+1} \approx 2.326 V_t \sigma_{t+1}$$
-
+$$
+\mathrm{VaR}_{99,t+1} \approx 2.326 V_t \sigma_{t+1}
+$$
 
 # 2.3 Modèle GARCH
 
