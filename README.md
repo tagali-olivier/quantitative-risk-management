@@ -186,7 +186,7 @@ $$\mu \approx 0$$
 
 ce qui donne :
 
-$$\boxed{VaR_{t+1}(c)\approxV_t z_c \sigma_{t+1}}$$
+$$\boxed{VaR_{t+1}(c) \approx V_t z_c \sigma_{t+1}}$$
 
 Le problème principal devient alors l'estimation de la volatilité future:
 
