@@ -299,43 +299,23 @@ Le modèle **GARCH-Generalized Autoregressive Conditional Heteroskedasticity** p
 
 Le modèle le plus couramment utilisé est :
 
-$$
-\boxed{\text{GARCH}(1,1)}
-$$
+$$\boxed{\text{GARCH}(1,1)}$$
 
 Le rendement peut être écrit :
 
-$$
-r_t = \mu + \epsilon_t
-$$
+$$r_t = \mu + \epsilon_t$$
 
 avec :
 
-$$
-\epsilon_t = \sigma_t z_t
-$$
+$$\epsilon_t = \sigma_t z_t$$
 
 où, dans le cas normal :
 
-$$
-z_t \sim \mathcal{N}(0,1)
-$$
+$$z_t \sim \mathcal{N}(0,1)$$
 
 La variance conditionnelle suit :
 
-$$
-\boxed{
-\sigma_t^2
-=
-\omega
-+
-\alpha\epsilon_{t-1}^{2}
-+
-\beta\sigma_{t-1}^{2}
-}
-$$
-
----
+$$\boxed{ \sigma_t^2=\omega+\alpha\epsilon_{t-1}^{2}+\beta\sigma_{t-1}^{2}}$$
 
 ## Interprétation des paramètres
 
@@ -343,17 +323,13 @@ Le paramètre $\omega$ représente la composante constante de la variance.
 
 Le paramètre $\alpha$ mesure la réaction de la volatilité aux nouveaux chocs :
 
-$$
-\alpha\epsilon_{t-1}^{2}
-$$
+$$\alpha\epsilon_{t-1}^{2}$$
 
 Un $\alpha$ élevé signifie que la volatilité réagit fortement aux nouvelles variations du marché.
 
 Le paramètre $\beta$ mesure la persistance de la volatilité passée :
 
-$$
-\beta\sigma_{t-1}^{2}
-$$
+$$\beta\sigma_{t-1}^{2}$$
 
 Un $\beta$ élevé signifie qu'un épisode de forte volatilité peut persister pendant plusieurs périodes.
 
@@ -363,71 +339,37 @@ Un $\beta$ élevé signifie qu'un épisode de forte volatilité peut persister p
 
 La persistance de la volatilité est mesurée par :
 
-$$
-\boxed{
-\alpha+\beta
-}
-$$
+$$\boxed{\alpha+\beta}$$
 
 Pour un modèle GARCH(1,1) stationnaire, on recherche généralement:
 
-$$
-\boxed{
-\alpha+\beta<1
-}
-$$
+$$\boxed{\alpha+\beta<1}$$
 
 Par exemple :
 
-$$
-\alpha=0.08
-$$
+$$\alpha=0.08$$
 
-$$
-\beta=0.90
-$$
+$$\beta=0.90$$
 
-donne :
+donne:
 
-$$
-\alpha+\beta=0.98
-$$
+$$\alpha+\beta=0.98$$
 
 La volatilité est donc très persistante.
-
----
 
 ## 2.2.3 Variance de long terme
 
 Lorsque:
 
-$$
-\alpha+\beta<1
-$$
+$$\alpha+\beta<1$$
 
 la variance de long terme est :
 
-$$
-\boxed{
-\sigma_{\infty}^{2}
-=
-\frac{\omega}
-{1-\alpha-\beta}
-}
-$$
+$$\boxed{ \sigma_{\infty}^{2}=\frac{\omega}{1-\alpha-\beta}}$$
 
 La volatilité de long terme vaut donc :
 
-$$
-\boxed{
-\sigma_{\infty}
-=
-\sqrt{
-\frac{\omega}
-{1-\alpha-\beta}
-}
-}
-$$
+$$\boxed{ \sigma_{\infty}=\sqrt{\frac{\omega}{1-\alpha-\beta}}}$$
 
 Cette propriété constitue une différence importante entre EWMA et GARCH.
 
@@ -435,105 +377,47 @@ Cette propriété constitue une différence importante entre EWMA et GARCH.
 
 Le modèle GARCH(1,1) est défini par :
 
-$$
-\sigma_t^2
-=
-\omega
-+
-\alpha\epsilon_{t-1}^{2}
-+
-\beta\sigma_{t-1}^{2}
-$$
+$$\sigma_t^2=\omega+\alpha\epsilon_{t-1}^{2}+\beta\sigma_{t-1}^{2}$$
 
 Le modèle EWMA est :
 
-$$
-\sigma_t^2
-=
-(1-\lambda)r_{t-1}^{2}
-+
-\lambda\sigma_{t-1}^{2}
-$$
+$$\sigma_t^2=(1-\lambda)r_{t-1}^{2}+\lambda\sigma_{t-1}^{2}$$
 
 EWMA peut donc être vu comme un cas particulier du modèle GARCH lorsque :
 
-$$
-\boxed{
-\omega=0
-}
-$$
+$$\boxed{\omega=0}$$
 
-$$
-\boxed{
-\alpha=1-\lambda
-}
-$$
+$$\boxed{\alpha=1-\lambda}$$
 
-$$
-\boxed{
-\beta=\lambda
-}
-$$
+$$\boxed{\beta=\lambda}$$
 
 Avec :
 
-$$
-\lambda=0.94
-$$
+$$\lambda=0.94$$
 
 on obtient :
 
-$$
-\alpha=0.06
-$$
+$$\alpha=0.06 $$
 
-et :
+et:
 
-$$
-\beta=0.94
-$$
+$$\beta=0.94$$
 
 La différence essentielle est que GARCH permet généralement d'**estimer les paramètres à partir des données**, tandis que le paramètre $\lambda$ d'EWMA est souvent fixé à l'avance.
-
----
 
 # 2.3.4 VaR avec GARCH
 
 Une fois le modèle estimé, nous obtenons la prévision de volatilité :
 
-$$
-\sigma_{t+1}
-$$
+$$\sigma_{t+1}$$
 
 Sous une distribution normale :
 
-$$
-\boxed{
-VaR_{t+1}(c)
-=
-V_t
-\left[
--\mu_{t+1}
-+
-z_c\sigma_{t+1}
-\right]
-}
-$$
+$$\boxed{ VaR_{t+1}(c)=V_t\left[-\mu_{t+1}+z_c\sigma_{t+1}\right]}$$
 
 Pour un niveau de confiance de 99 % :
 
-$$
-\boxed{
-VaR_{99\%,t+1}
-=
-V_t
-\left(
--\mu_{t+1}
-+
-2.326\sigma_{t+1}
-\right)
-}
-$$
+$$\boxed{ VaR_{99\%,t+1}=V_t\left(-\mu_{t+1}+2.326\sigma_{t+1}\right)}$$
 
 # 2.3.5 GARCH avec distribution Student-t
 
@@ -541,26 +425,10 @@ L'hypothèse normale peut sous-estimer les événements extrêmes car les rendem
 
 Une alternative consiste à supposer :
 
-$$
-z_t \sim t_{\nu}
-$$
+$$z_t \sim t_{\nu}$$
 
 où $\nu$ représente le nombre de degrés de liberté de la distribution de Student.
 
 Nous obtenons alors :
 
-$$
-\boxed{
-\text{GARCH}(1,1)\text{-Student-t}
-}
-$$
-
-Cette variante peut être plus adaptée au calcul d'une VaR à des niveaux de confiance élevés tels que **99 %**.
-
-
-                  |
-                  v
-         VaR paramétrique
-                  |
-                  v
-         Perte potentielle
+$$\boxed{\text{GARCH}(1,1)\text{-Student-t}}$$
