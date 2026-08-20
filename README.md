@@ -229,15 +229,7 @@ Le modèle **EWMA — Exponentially Weighted Moving Average** donne davantage d'
 
 La variance conditionnelle est définie par :
 
-$$
-\boxed{
-\sigma_t^2
-=
-\lambda\sigma_{t-1}^{2}
-+
-(1-\lambda)r_{t-1}^{2}
-}
-$$
+$$ \boxed{ \sigma_t^2=\lambda\sigma_{t-1}^{2}+(1-\lambda)r_{t-1}^{2}}$$
 
 où :
 
@@ -248,19 +240,11 @@ où :
 
 Une valeur couramment utilisée pour des données quotidiennes est :
 
-$$
-\boxed{\lambda = 0.94}
-$$
+$$ \boxed{\lambda = 0.94}$$
 
 L'équation devient alors :
 
-$$
-\sigma_t^2
-=
-0.94\sigma_{t-1}^{2}
-+
-0.06r_{t-1}^{2}
-$$
+$$ \sigma_t^2=0.94\sigma_{t-1}^{2}+0.06r_{t-1}^{2} $$
 
 Cela signifie que la nouvelle estimation dépend :
 
@@ -271,29 +255,11 @@ Cela signifie que la nouvelle estimation dépend :
 
 La variance prévue pour le jour suivant est :
 
-$$
-\boxed{
-\sigma_{t+1}^{2}
-=
-\lambda\sigma_t^2
-+
-(1-\lambda)r_t^2
-}
-$$
+$$\boxed{ \sigma_{t+1}^{2}=\lambda\sigma_t^2+(1-\lambda)r_t^2}$$
 
 La volatilité correspondante est :
 
-$$
-\boxed{
-\sigma_{t+1}
-=
-\sqrt{
-\lambda\sigma_t^2
-+
-(1-\lambda)r_t^2
-}
-}
-$$
+$$\boxed{ \sigma_{t+1} =\sqrt{\lambda\sigma_t^2+(1-\lambda)r_t^2}}$$
 
 Une forte variation récente augmente donc automatiquement la volatilité prévue.
 
@@ -303,47 +269,19 @@ Une forte variation récente augmente donc automatiquement la volatilité prévu
 
 Sous l'hypothèse d'une distribution normale :
 
-$$
-VaR_{t+1}(c)
-=
-V_t
-\left(
--\mu
-+
-z_c\sigma_{t+1}
-\right)
-$$
+$$ VaR_{t+1}(c)=V_t\left(-\mu+z_c\sigma_{t+1}\right)$$
 
 Au niveau de confiance de 99 % :
 
-$$
-\boxed{
-VaR_{99\%,t+1}
-=
-V_t
-\left(
--\mu
-+
-2.326\sigma_{t+1}
-\right)
-}
-$$
+$$ \boxed{ VaR_{99\%,t+1}= V_t \left(-\mu + 2.326\sigma_{t+1}\right)}$$
 
 Si l'on suppose :
 
-$$
-\mu \approx 0
-$$
+$$ \mu \approx 0 $$
 
-alors :
+alors:
 
-$$
-\boxed{
-VaR_{99\%,t+1}
-\approx
-2.326\,V_t\,\sigma_{t+1}
-}
-$$
+$$\boxed{ VaR_{99\%,t+1}\approx2.326\,V_t\,\sigma_{t+1}}$$
 
 
 # 2.3 Modèle GARCH
