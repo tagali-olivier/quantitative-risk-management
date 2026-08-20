@@ -281,7 +281,7 @@ $$ \mu \approx 0 $$
 
 alors:
 
-$$\boxed{ VaR_{99\%,t+1}\approx2.326\,V_t\,\sigma_{t+1}}$$
+$$ \boxed{VaR_{99\%,t+1}\approx2.326\,V_t\,\sigma_{t+1}}$$
 
 
 # 2.3 Modèle GARCH
