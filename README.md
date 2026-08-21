@@ -208,9 +208,7 @@ On observe généralement des périodes de :
 
 Ce phénomène est appelé **volatility clustering**.
 
-En pratique :
-
-$$\boxed{\text{forte volatilité aujourd'hui}\Rightarrow\text{probabilité élevée de forte volatilité demain}}$$
+En pratique : $\boxed{\text{forte volatilité aujourd'hui}\Rightarrow\text{probabilité élevée de forte volatilité demain}}$
 
 Les modèles EWMA et GARCH permettent de tenir compte de cette dépendance temporelle.
 
