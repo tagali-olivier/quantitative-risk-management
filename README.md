@@ -176,7 +176,7 @@ Quelques quantiles usuels:
 | 97.5 % | 1.960 |
 | 99 % | 2.326 |
 
-Pour des rendements quotidiens, la moyenne est souvent très faible par rapport à la volatilité. On peut donc parfois utiliser l'approximation :$\mu \approx 0$
+Pour des rendements quotidiens, la moyenne est souvent très faible par rapport à la volatilité. On peut donc parfois utiliser l'approximation : $$\mu \approx 0$$
 
 ce qui donne :
 
