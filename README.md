@@ -217,9 +217,9 @@ Les modèles EWMA et GARCH permettent de tenir compte de cette dépendance tempo
 
 ## 2.2.1 Définition
 
-Le modèle **EWMA — Exponentially Weighted Moving Average** donne davantage d'importance aux observations récentes qu'aux observations anciennes.
+Le modèle **EWMA-Exponentially Weighted Moving Average** donne davantage d'importance aux observations récentes qu'aux observations anciennes.
 
-La variance conditionnelle est définie par :
+La variance conditionnelle est définie par:
 
 $$ \boxed{ \sigma_t^2=\lambda\sigma_{t-1}^{2}+(1-\lambda)r_{t-1}^{2}}$$
 
@@ -238,7 +238,7 @@ L'équation devient alors :
 
 $$ \sigma_t^2=0.94\sigma_{t-1}^{2}+0.06r_{t-1}^{2} $$
 
-Cela signifie que la nouvelle estimation dépend :
+Cela signifie que la nouvelle estimation dépend:
 
 - à **94 %** de la variance précédente ;
 - à **6 %** du dernier choc observé sur le marché.
