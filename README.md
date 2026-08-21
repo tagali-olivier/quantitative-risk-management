@@ -125,11 +125,7 @@ Dans cette partie du projet, nous allons utiliser une **approche paramétrique d
 - **EWMA-Exponentially Weighted Moving Average**
 - **GARCH-Generalized Autoregressive Conditional Heteroskedasticity**
 
-L'objectif est de tenir compte d'une caractéristique fondamentale des marchés financiers :
-
-$$
-\boxed{\text{La volatilité évolue dans le temps}}
-$$
+L'objectif est de tenir compte d'une caractéristique fondamentale des marchés financiers : $\boxed{\text{La volatilité évolue dans le temps}}$
 
 Les périodes calmes présentent généralement de faibles variations des prix, tandis que les périodes de crise présentent des mouvements beaucoup plus importants.
 
