@@ -313,7 +313,7 @@ $$\boxed{ \sigma_t^2=\omega+\alpha\epsilon_{t-1}^{2}+\beta\sigma_{t-1}^{2}}$$
 
 Le paramètre $\omega$ représente la composante constante de la variance.
 
-Le paramètre $\alpha$ mesure la réaction de la volatilité aux nouveaux chocs :
+Le paramètre $\alpha$ mesure la réaction de la volatilité aux derniers  chocs :
 
 $$\alpha\epsilon_{t-1}^{2}$$
 
