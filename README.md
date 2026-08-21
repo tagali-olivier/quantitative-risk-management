@@ -141,7 +141,7 @@ $$
 r_t = \frac{P_t-P_{t-1}}{P_{t-1}}
 $$
 
-Dans la suite du projet, nous utiliserons principalement les rendements logarithmiques:
+Dans la suite de cette section, nous utiliserons principalement les rendements logarithmiques:
 
 $$\boxed{r_t = \ln\left(\frac{P_t}{P_{t-1}}\right)}$$
 
