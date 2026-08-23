@@ -118,7 +118,7 @@ Ainsi, la **VaR** détermine le seuil à partir duquel les pertes sont considér
 
 
 
-# Partie 2 — VaR Paramétrique avec EWMA et GARCH
+# Partie 2-VaR Paramétrique avec EWMA et GARCH
 
 Dans cette partie du projet, nous allons utiliser une **approche paramétrique dynamique** pour calculer la VaR. Contrairement à une VaR paramétrique classique utilisant une volatilité constante, nous allons modéliser la volatilité avec deux méthodes :
 
