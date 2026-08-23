@@ -411,16 +411,3 @@ Pour un niveau de confiance de **99 %** :
 
 $$\mathrm{VaR}_{99,t+1}=V_t \left( -\mu_{t+1} + 2.326 \sigma_{t+1} \right)$$
 
-# 2.3.5 GARCH avec distribution Student-t
-
-L'hypothèse normale peut sous-estimer les événements extrêmes car les rendements financiers présentent souvent des **queues épaisses**.
-
-Une alternative consiste à supposer :
-
-$$z_t \sim t_{\nu}$$
-
-où $\nu$ représente le nombre de degrés de liberté de la distribution de Student.
-
-Nous obtenons alors :
-
-$$\boxed{\text{GARCH}(1,1)\text{-Student-t}}$$
