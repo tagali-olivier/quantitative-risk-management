@@ -411,3 +411,163 @@ Pour un niveau de confiance de **99 %** :
 
 $$\mathrm{VaR}_{99,t+1}=V_t \left( -\mu_{t+1} + 2.326 \sigma_{t+1} \right)$$
 
+
+##3VaR par simulation de Monte Carlo pour un portefeuille multi-actifs
+
+## 3.1 
+La **simulation de Monte Carlo** est une méthode numérique permettant d'évaluer le risque d'un portefeuille en générant un grand nombre de scénarios possibles pour les facteurs de marché. Contrairement à une méthode analytique, qui cherche directement une formule pour la VaR, Monte Carlo procède en plusieurs étapes:
+
+1. estimer un modèle statistique des rendements;
+2. générer un grand nombre de scénarios aléatoires compatibles avec ce modèle;
+3. calculer le rendement ou la valeur du portefeuille dans chacun de ces scénarios;
+4. construire la distribution simulée des profits et pertes;
+5. extraire un quantile de cette distribution afin d'obtenir la VaR.
+
+L'objectif est donc de répondre à la question suivante :
+
+Si les rendements futurs se comportaient conformément au modèle statistique estimé à partir des données disponibles, quelles pertes pourrait subir le portefeuille ?
+
+On peut par exemple générer:
+$$10\,000,\qquad50\,000,\qquad100\,000$$
+
+scénarios de marché.
+
+Pour chaque scénario $i$, on obtient un profit ou une perte:
+
+$$P\&L^{(s)}$$
+
+L'ensemble de ces simulations produit alors une distribution empirique:
+
+$$P\&L^{(1)},P\&L^{(2)},\ldots,P\&L^{(S)}$$
+
+où $S$ représente le nombre total de simulations.
+
+La VaR est ensuite déterminée à partir d'un quantile de cette distribution.
+
+Dans le cas d'un portefeuille composé de plusieurs actifs, une difficulté supplémentaire apparaît: les rendements des différents actifs ne sont généralement **pas indépendants**.
+
+La simulation doit donc prendre en compte simultanément:
+
+- les rendements moyens;
+- les volatilités individuelles;
+- les covariances ;
+- les corrélations entre les actifs.
+
+## 3.2 Pourquoi utiliser Monte Carlo ?
+
+Considérons un portefeuille composé de plusieurs actions, par exemple :
+
+- Apple;
+- Microsoft;
+- Nvidia;
+- Amazon.
+
+Les rendements de ces actifs ne sont généralement pas indépendants.
+
+Une variation importante du marché technologique peut provoquer des mouvements simultanés sur plusieurs titres.
+
+Ainsi, le risque total du portefeuille dépend non seulement du risque individuel de chaque actif, mais également de leurs interactions.
+
+Nous devons donc modéliser :
+$$\boxed{\text{risques individuels}+\text{dépendances entre les actifs}}$$
+
+Dans le cadre d'un modèle gaussien multivarié, cette dépendance est représentée par la **matrice de covariance**.
+
+La simulation Monte Carlo permet alors de générer simultanément des rendements pour tous les actifs tout en respectant approximativement les moyennes, volatilités et corrélations estimées.
+
+## 3.3 Structure générale du portefeuille
+
+Considérons un portefeuille composé de $N$ actifs.
+
+À la date $t$, le vecteur des rendements est:
+
+$$\mathbf{r}_t=
+\begin{pmatrix}
+r_{1,t}\\
+r_{2,t}\\
+\vdots\\
+r_{N,t}
+\end{pmatrix}
+$$
+
+où $r_{i,t}$ représente le rendement de l'actif $i$ à la date $t$.
+
+Par exemple, pour quatre actifs :
+
+$$
+\mathbf{r}_t
+=
+\begin{pmatrix}
+r_{\mathrm{AAPL},t}\\
+r_{\mathrm{MSFT},t}\\
+r_{\mathrm{NVDA},t}\\
+r_{\mathrm{AMZN},t}
+\end{pmatrix}
+$$
+
+Le vecteur des poids du portefeuille est défini par:
+
+$$
+\mathbf{w}
+=
+\begin{pmatrix}
+w_1\\
+w_2\\
+\vdots\\
+w_N
+\end{pmatrix}
+$$
+
+avec :
+
+$$\sum_{i=1}^{N} w_i = 1$$
+
+dans le cas d'un portefeuille entièrement investi sans position nette additionnelle en liquidités.
+
+Le rendement du portefeuille s'écrit:
+
+$$\boxed{ r_{p,t}=\mathbf{w}^{\top}\mathbf{r}_t}$$
+
+ce qui est équivalent à:
+
+$$r_{p,t}=\sum_{i=1}^{N} w_i r_{i,t}$$
+
+Cette relation permet de transformer les rendements individuels des actifs en un rendement unique pour l'ensemble du portefeuille.
+
+## 3.4 Exemple de portefeuille
+
+Supposons un portefeuille d'une valeur initiale:
+
+$$V_0 = 1\,000\,000$$
+
+réparti de la manière suivante :
+
+| Actif | Poids |
+|---|---:|
+| Apple | 30 % |
+| Microsoft | 25 % |
+| Nvidia | 25 % |
+| Amazon | 20 % |
+
+Le vecteur de poids est donc :
+
+$$\mathbf{w}=\begin{pmatrix}0.30\\0.25\\0.25\\0.20\end{pmatrix}$$
+
+et :
+
+$$
+0.30 + 0.25 + 0.25 + 0.20 = 1
+$$
+
+## 3.5 Première étape: calcul des rendements historiques
+
+Pour chaque actif $i$, on dispose d'une série de prix:
+
+$$P_{i,1},P_{i,2},\ldots,P_{i,T}$$
+
+Nous calculons les rendements logarithmiques:
+
+$$\boxed{r_{i,t}=\ln\left(\frac{P_{i,t}}{P_{i,t-1}}\right)}$$
+
+
+
