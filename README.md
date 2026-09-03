@@ -505,28 +505,24 @@ Le vecteur des rendements des quatre actifs est défini par :
 
 $$
 \mathbf{r}_t =
-\left(
-\begin{array}{c}
-r_{\mathrm{AAPL},t} \\
-r_{\mathrm{MSFT},t} \\
-r_{\mathrm{NVDA},t} \\
+\bigl(
+r_{\mathrm{AAPL},t},
+r_{\mathrm{MSFT},t},
+r_{\mathrm{NVDA},t},
 r_{\mathrm{AMZN},t}
-\end{array}
-\right)
+\bigr)^{\top}
 $$
 
 Le vecteur des poids du portefeuille est défini par :
 
 $$
 \mathbf{w} =
-\left(
-\begin{array}{c}
-w_1 \\
-w_2 \\
-\vdots \\
+\bigl(
+w_1,
+w_2,
+\ldots,
 w_N
-\end{array}
-\right)
+\bigr)^{\top}
 $$
 
 avec :
@@ -534,8 +530,6 @@ avec :
 $$
 \sum_{i=1}^{N} w_i = 1
 $$
-
-$$\sum_{i=1}^{N} w_i = 1$$
 
 dans le cas d'un portefeuille entièrement investi sans position nette additionnelle en liquidités.
 
