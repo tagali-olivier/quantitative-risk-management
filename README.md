@@ -65,7 +65,7 @@ $$
 $$
 
 
-## 3. Calcul de la Value at Risk historique
+## 3. Calcul de la Value at Risk historique 
 
 La série des PnL obtenue constitue la **distribution historique des gains et pertes du portefeuille**.
 
