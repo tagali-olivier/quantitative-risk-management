@@ -544,9 +544,14 @@ réparti de la manière suivante :
 | Nvidia | 25 % |
 | Amazon | 20 % |
 
-Le vecteur de poids est donc :
+Le vecteur des poids est donc :
 
-$$\mathbf{w}=\begin{pmatrix}0.30\\0.25\\0.25\\0.20\end{pmatrix}$$
+$$
+\mathbf{w} =
+\left(
+0.30,\; 0.25,\; 0.25,\; 0.20
+\right)
+$$
 
 et :
 
