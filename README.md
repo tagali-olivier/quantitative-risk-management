@@ -547,10 +547,7 @@ réparti de la manière suivante :
 Le vecteur des poids est donc :
 
 $$
-\mathbf{w} =
-\left(
-0.30,\; 0.25,\; 0.25,\; 0.20
-\right)
+\mathbf{w} = (0.30, 0.25, 0.25, 0.20)^{\mathsf{T}}
 $$
 
 et :
