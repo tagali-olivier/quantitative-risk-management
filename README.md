@@ -499,21 +499,7 @@ $$
 
 où $r_{i,t}$ représente le rendement de l'actif $i$ à la date $t$.
 
-Par exemple, pour quatre actifs :
-
-Le vecteur des rendements des quatre actifs est défini par :
-
-$$
-\mathbf{r}_t =
-\bigl(
-r_{\mathrm{AAPL},t},
-r_{\mathrm{MSFT},t},
-r_{\mathrm{NVDA},t},
-r_{\mathrm{AMZN},t}
-\bigr)^{\top}
-$$
-
-Le vecteur des poids du portefeuille est défini par :
+Le vecteur des poids du portefeuille est défini par:
 
 $$
 \mathbf{w} =
