@@ -501,30 +501,11 @@ où $r_{i,t}$ représente le rendement de l'actif $i$ à la date $t$.
 
 Par exemple, pour quatre actifs :
 
-$$
-\mathbf{r}_t
-=
-\begin{pmatrix}
-r_{\mathrm{AAPL},t}\\
-r_{\mathrm{MSFT},t}\\
-r_{\mathrm{NVDA},t}\\
-r_{\mathrm{AMZN},t}
-\end{pmatrix}
-$$
+$$\mathbf{r}_t=\begin{pmatrix}r_{\mathrm{AAPL},t}\\r_{\mathrm{MSFT},t}\\r_{\mathrm{NVDA},t}\\r_{\mathrm{AMZN},t}\end{pmatrix}$$
 
 Le vecteur des poids du portefeuille est défini par:
 
-$$
-\mathbf{w}
-=
-\begin{pmatrix}
-w_1\\
-w_2\\
-\vdots\\
-w_N
-\end{pmatrix}
-$$
-
+$$\mathbf{w}=\begin{pmatrix}w_1\\w_2\\\vdots\\w_N\end{pmatrix}$$
 avec :
 
 $$\sum_{i=1}^{N} w_i = 1$$
