@@ -432,13 +432,11 @@ $$10\,000,\qquad50\,000,\qquad100\,000$$
 
 scénarios de marché.
 
-Pour chaque scénario $i$, on obtient un profit ou une perte:
-
-$$P\&L^{(s)}$$
+Pour chaque scénario $i$, on obtient un profit ou une perte: $P\&L^{(s)}$
 
 L'ensemble de ces simulations produit alors une distribution empirique:
 
-$$P\&L^{(1)},P\&L^{(2)},\ldots,P\&L^{(S)}$$
+$$ P\&L^{(1)},P\&L^{(2)},\ldots,P\&L^{(S)}$$
 
 où $S$ représente le nombre total de simulations.
 
