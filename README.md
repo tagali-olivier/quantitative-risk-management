@@ -7,7 +7,7 @@ Le projet repose sur un **portefeuille multi-actifs** afin d'étudier différent
 
 Le portefeuille est composé d'**actions américaines et européennes**, d'**obligations souveraines**, de **matières premières** et d'une exposition au **marché des changes (FX)**.
 
-## Composition du portefeuille
+## Composition du portefeuille 
 
 | Actif | Classe d'actifs | Poids |
 |---|---|---:|
