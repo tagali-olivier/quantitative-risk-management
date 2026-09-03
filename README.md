@@ -412,7 +412,7 @@ Pour un niveau de confiance de **99 %** :
 $$\mathrm{VaR}_{99,t+1}=V_t \left( -\mu_{t+1} + 2.326 \sigma_{t+1} \right)$$
 
 
-## 3VaR par simulation de Monte Carlo pour un portefeuille multi-actifs
+## 3 VaR par simulation de Monte Carlo pour un portefeuille multi-actifs
 
 ## 3.1 
 La **simulation de Monte Carlo** est une méthode numérique permettant d'évaluer le risque d'un portefeuille en générant un grand nombre de scénarios possibles pour les facteurs de marché. Contrairement à une méthode analytique, qui cherche directement une formule pour la VaR, Monte Carlo procède en plusieurs étapes:
