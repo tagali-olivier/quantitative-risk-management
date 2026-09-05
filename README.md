@@ -529,42 +529,31 @@ $$r_{p,t}=\sum_{i=1}^{N} w_i r_{i,t}$$
 
 Cette relation permet de transformer les rendements individuels des actifs en un rendement unique pour l'ensemble du portefeuille.
 
-## 3.4 Exemple de portefeuille
+## 3.4 Hypothèse statistique
 
-Supposons un portefeuille d'une valeur initiale:
-
-$$V_0 = 1\,000\,000$$
-
-réparti de la manière suivante :
-
-| Actif | Poids |
-|---|---:|
-| Apple | 30 % |
-| Microsoft | 25 % |
-| Nvidia | 25 % |
-| Amazon | 20 % |
-
-Le vecteur des poids est donc :
+Dans une première implémentation, nous supposons que le vecteur des rendements journaliers suit une loi normale multivariée :
 
 $$
-\mathbf{w} = (0.30, 0.25, 0.25, 0.20)^{\mathsf{T}}
+\boxed{
+\mathbf{r}_t \sim \mathcal{N}_N(\boldsymbol{\mu}, \boldsymbol{\Sigma})
+}
 $$
 
-et :
+où :
+
+- $\boldsymbol{\mu}$ est le vecteur des rendements moyens ;
+- $\boldsymbol{\Sigma}$ est la matrice de covariance ;
+- $N$ est le nombre d'actifs.
+
+Pour le code, nous utiliserons les **log-rendements** :
 
 $$
-0.30 + 0.25 + 0.25 + 0.20 = 1
+\boxed{
+r_{i,t} = \ln\left(\frac{P_{i,t}}{P_{i,t-1}}\right)
+}
 $$
 
-## 3.5 Première étape: calcul des rendements historiques
 
-Pour chaque actif $i$, on dispose d'une série de prix:
-
-$$P_{i,1},P_{i,2},\ldots,P_{i,T}$$
-
-Nous calculons les rendements logarithmiques:
-
-$$\boxed{r_{i,t}=\ln\left(\frac{P_{i,t}}{P_{i,t-1}}\right)}$$
 
 
 
