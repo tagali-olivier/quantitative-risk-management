@@ -531,7 +531,7 @@ Cette relation permet de transformer les rendements individuels des actifs en un
 
 ## 3.4 Hypothèse statistique
 
-Dans une première implémentation, nous supposons que le vecteur des rendements journaliers suit une loi normale multivariée :
+Dans cette implémentation, nous supposons que le vecteur des rendements journaliers suit une loi normale multivariée :
 
 $$
 \boxed{
