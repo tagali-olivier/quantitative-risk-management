@@ -586,6 +586,42 @@ $$
 
 Ces dépendances sont essentielles : simuler séparément les  actions reviendrait à ignorer la diversification et les mouvements communs du marché.
 
+## 3.6 Génération des scénarios: Cholesky
 
+Nous commençons par générer des chocs indépendants :
+
+$$
+\mathbf{Z} \sim \mathcal{N}_N(\mathbf{0}, \mathbf{I})
+$$
+
+Nous décomposons ensuite la covariance :
+
+$$
+\boxed{
+\boldsymbol{\Sigma} = \mathbf{L}\mathbf{L}^{T}
+}
+$$
+
+Puis nous construisons :
+
+$$
+\boxed{
+\mathbf{r}^{(s)} = \boldsymbol{\mu} + \mathbf{L}\mathbf{Z}^{(s)}
+}
+$$
+
+On obtient alors :
+
+$$
+E\left[\mathbf{r}^{(s)}\right] = \boldsymbol{\mu}
+$$
+
+et :
+
+$$
+\operatorname{Cov}\left(\mathbf{r}^{(s)}\right) = \boldsymbol{\Sigma}
+$$
+
+Les scénarios simulés reproduisent donc, sous l'hypothèse gaussienne, la structure moyenne-covariance estimée sur les données.
 
 
