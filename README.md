@@ -644,4 +644,33 @@ PnL^{(s)} = V_1^{(s)} - V_0
 }
 $$
 
+## 3.8 VaR Monte Carlo
+
+Pour un niveau de confiance $c$ :
+
+$$
+\alpha = 1 - c
+$$
+
+La VaR est :
+
+$$
+\boxed{
+VaR_c = -Q_{\alpha}(PnL)
+}
+$$
+
+Pour $c = 99\%$ :
+
+$$
+\alpha = 0.01
+$$
+
+donc :
+
+$$
+\boxed{
+VaR_{99} = -Q_{0.01}(PnL)
+}
+$$
 
