@@ -554,6 +554,38 @@ r_{i,t} = \ln\left(\frac{P_{i,t}}{P_{i,t-1}}\right)
 $$
 
 
+## 3.5 Estimation du modèle
+
+À partir des rendements historiques, nous estimons :
+
+$$
+\hat{\boldsymbol{\mu}}
+$$
+
+et :
+
+$$
+\hat{\boldsymbol{\Sigma}}
+$$
+
+avec :
+
+$$
+\hat{\mu}_i = \frac{1}{T}\sum_{t=1}^{T} r_{i,t}
+$$
+
+La covariance entre les actifs $i$ et $j$ mesure leurs mouvements conjoints.
+
+La corrélation correspondante est :
+
+$$
+\boxed{
+\rho_{ij} = \frac{\sigma_{ij}}{\sigma_i \sigma_j}
+}
+$$
+
+Ces dépendances sont essentielles : simuler séparément les  actions reviendrait à ignorer la diversification et les mouvements communs du marché.
+
 
 
 
