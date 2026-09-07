@@ -614,3 +614,39 @@ $$\mathrm{Cov}\left(\mathbf{r}^{(s)}\right) = \boldsymbol{\Sigma}$$
 Les scénarios simulés reproduisent donc, sous l'hypothèse gaussienne, la structure moyenne-covariance estimée sur les données.
 
 
+## 3.7 Revalorisation du portefeuille
+
+Comme nous utilisons des log-rendements, pour un actif $i$ :
+
+$$
+P_{i,t+1} = P_{i,t} e^{r_i}
+$$
+
+Si $V_{i,0}$ est la valeur initialement investie dans l'actif :
+
+$$
+V_{i,1}^{(s)} = V_{i,0} e^{r_i^{(s)}}
+$$
+
+La valeur finale du portefeuille est donc :
+
+$$
+\boxed{
+V_1^{(s)} = \sum_{i=1}^{N} V_{i,0} e^{r_i^{(s)}}
+}
+$$
+
+et :
+
+$$
+\boxed{
+PnL^{(s)} = V_1^{(s)} - V_0
+}
+$$
+
+Cette revalorisation est plus cohérente avec les log-rendements que l'approximation linéaire :
+
+$$
+PnL = V_0 r_p
+$$
+
