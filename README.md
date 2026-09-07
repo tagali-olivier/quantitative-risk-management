@@ -644,9 +644,4 @@ PnL^{(s)} = V_1^{(s)} - V_0
 }
 $$
 
-Cette revalorisation est plus cohérente avec les log-rendements que l'approximation linéaire :
-
-$$
-PnL = V_0 r_p
-$$
 
