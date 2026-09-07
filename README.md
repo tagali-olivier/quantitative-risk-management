@@ -646,28 +646,15 @@ $$
 
 ## 3.8 VaR Monte Carlo
 
-Pour un niveau de confiance $c$ :
-
-$$
-\alpha = 1 - c
-$$
-
-La VaR est :
+Pour un niveau de confiance $\alpha$ , la VaR est :
 
 $$
 \boxed{
-VaR_c = -Q_{\alpha}(PnL)
+VaR_{\alpha} = -Q_{1-\alpha}(PnL)
 }
 $$
 
-Pour $c = 99\%$ :
-
-$$
-\alpha = 0.01
-$$
-
-donc :
-
+Pour $\alpha = 99\%$ on:
 $$
 \boxed{
 VaR_{99} = -Q_{0.01}(PnL)
