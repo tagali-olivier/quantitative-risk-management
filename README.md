@@ -596,25 +596,17 @@ $$
 
 Nous décomposons ensuite la covariance :
 
-$$
-\boxed{
-\boldsymbol{\Sigma} = \mathbf{L}\mathbf{L}^{T}
-}
-$$
+$$\boxed{\boldsymbol{\Sigma} = \mathbf{L}\mathbf{L}^{T}}$$
 
 Puis nous construisons :
 
-$$
-\boxed{
+$$\boxed{
 \mathbf{r}^{(s)} = \boldsymbol{\mu} + \mathbf{L}\mathbf{Z}^{(s)}
-}
-$$
+}$$
 
 On obtient alors :
 
-$$
-E\left[\mathbf{r}^{(s)}\right] = \boldsymbol{\mu}
-$$
+$$E\left[\mathbf{r}^{(s)}\right] = \boldsymbol{\mu}$$
 
 et :
 
