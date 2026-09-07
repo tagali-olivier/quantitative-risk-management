@@ -664,13 +664,13 @@ VaR_{99} = -Q_{0.01}(PnL)
 L'Expected Shortfall mesure la perte moyenne dans la queue située au-delà de la VaR:
 
 $$\boxed{
-ES_c = -E\left[ PnL \mid PnL \leq Q_{1-c}(PnL) \right]
+ES_{\alpha} = -E\left[ PnL \mid PnL \leq Q_{1-\alpha}(PnL) \right]
 }$$
 
 on a toujours:
 
 $$
 \boxed{
-ES_c \geq VaR_c
+ES_{\alpha} \geq VaR_{\alpha}
 }
 $$
