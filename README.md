@@ -609,9 +609,8 @@ On obtient alors :
 $$E\left[\mathbf{r}^{(s)}\right] = \boldsymbol{\mu}$$
 
 et :
-$$
-\mathrm{Cov}\left(\mathbf{r}^{(s)}\right) = \boldsymbol{\Sigma}
-$$
+$$\mathrm{Cov}\left(\mathbf{r}^{(s)}\right) = \boldsymbol{\Sigma}$$
+
 Les scénarios simulés reproduisent donc, sous l'hypothèse gaussienne, la structure moyenne-covariance estimée sur les données.
 
 
