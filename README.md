@@ -655,9 +655,7 @@ VaR_{\alpha} = -Q_{1-\alpha}(PnL)
 $$
 
 Pour $\alpha = 99\%$ on:
-$$
-\boxed{
+$$\boxed{
 VaR_{99} = -Q_{0.01}(PnL)
-}
-$$
+}$$
 
